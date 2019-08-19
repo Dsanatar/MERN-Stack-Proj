@@ -19,3 +19,11 @@
     opacity: 0.01;
     transition: opacity 1000ms ease-in;
 }
+
+.shift {
+    box-sizing: content-box;
+}
+
+.shift:hover {
+    background-color: #3fbac2
+}

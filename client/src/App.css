@@ -1,3 +1,10 @@
+* {
+    outline: none;
+}
+
+h1 {
+    font-family: 'Titillium Web', 'sans-serif';
+}
 .remove-btn {
     margin-right: 0.5rem;
 }

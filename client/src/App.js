@@ -6,12 +6,17 @@ import { Container } from 'reactstrap';
 
 import { Provider } from 'react-redux';
 import store from './store';
+import { loadUser } from './actions/authAction';
 import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {
+
+  componentDidMount(){
+    store.dispatch(loadUser());
+  }
 
   toggle = () => {
     console.log('yes')

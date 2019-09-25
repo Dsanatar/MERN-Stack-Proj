@@ -49,10 +49,7 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={store}>
-      <div className="App">
-        <AppNavbar/>
-        <Container>
+      /*
           <p>Song Search</p>
           <form onSubmit={this.onSubmit}>
             <input id="query" required type="text" placeholder="Search"/>
@@ -65,6 +62,11 @@ class App extends Component {
             <h3>Results</h3>
             <ul id="results"></ul>
           </section>
+      */
+      <Provider store={store}>
+      <div className="App">
+        <AppNavbar/>
+        <Container>
           <ItemModal/>
           <List/>
         </Container>

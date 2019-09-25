@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
 
     // validation
     if(!name || !email || !password){
-        return res.status(400).json({ msg: 'Please enter all field' });
+        return res.status(400).json({ msg: 'Please enter all fields' });
     }
 
     // check for existing user
@@ -28,14 +28,13 @@ router.post('/', (req, res) => {
             const newUser = new User ({
                 name,
                 email,
-                passowrd
+                password
             });
 
             // create salt and hash
             bcrypt.genSalt(10, (err, salt) => {
-                bcrypt.hash(newUser.passowrd, salt, (err, hash) => {
-                    if(err) throw err;
-
+                bcrypt.hash(newUser.password, salt, (err, hash) => {
+                    console.log('ye');
                     newUser.password = hash;
                     newUser.save()
                         .then(user => {
@@ -57,10 +56,15 @@ router.post('/', (req, res) => {
                                         }
                                     })                                
                                 })
+                        }).catch(err =>{
+                            return res.status(400).json({ msg: 'Error saving user' });
                         })
                 })
             })
-        });
+
+        }).catch(err => {
+            return res.status(400).json({ msg: 'Error in hash' });
+        })
 });
 
 

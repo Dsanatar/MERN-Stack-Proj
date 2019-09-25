@@ -1,15 +1,15 @@
-import { BG_CHANGE } from '../actions/types'
+import { ICON_CHANGE } from '../actions/types'
 
 const initialState = {
-    bgColor: '#3fbac2'
+    icon: 0
 };
 
 export default function(state = initialState, action){
     switch(action.type){
-        case BG_CHANGE:
+        case ICON_CHANGE:
             return {
                 ...state,
-                bgColor: action.payload
+                icon: action.payload
             }
         default:
             return state

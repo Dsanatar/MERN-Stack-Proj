@@ -1,8 +1,8 @@
-import { BG_CHANGE } from './types'
+import { ICON_CHANGE } from './types'
 
-export const changeBgColor = color => dispatch => {
+export const changeIcon = icon => dispatch => {
     dispatch({
-        type: BG_CHANGE,
-        payload: color
+        type: ICON_CHANGE,
+        payload: icon
     })
 };
